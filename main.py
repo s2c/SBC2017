@@ -86,8 +86,8 @@ def main():
 		# The callback for when the client receives a CONNACK response from the server.
 	def on_connect(client, userdata, flags, rc):
 	    print("Connected with result code "+str(rc))
-	    print("Use publish//update as publishing topic")
-	    print("Use receive//update as receiving topic")
+	    print("Use publish/update as publishing topic")
+	    print("Use receive/update as receiving topic")
 
 	    # Subscribing in on_connect() means that if we lose the connection and
 	    # reconnect then subscriptions will be renewed.
@@ -102,7 +102,7 @@ def main():
 	    message = parsed[1]
 	    ad = serve_ad(user,clusters)
 	    event = '{{user_id : {0} , ad_id : {1}}}'.format(user,ad)# % user, ad
-	    client.publish("receive/topic",event)#publish
+	    client.publish("receive/update",event)#publish
 	    
 	client = mqtt.Client()
 	client.on_connect = on_connect
