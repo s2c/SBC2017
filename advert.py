@@ -12,7 +12,7 @@ class advert(object):
 		self.total = 0.0	# Total number of times ad was offered
 		self.availableClusters = [] # List of all cluster that this advert can switch to if it is rejeced too many times
 
-	def updateClusterCat(globalClusterRatio):
+	def updateClusterCat(self,globalClusterRatio,globalPeopleRatio):
 		"""updates cluster category for the advertisement if too many people reject it"""
 		acceptRatio = self.accepted/self.total
 		if acceptRatio < globalClusterRatio:

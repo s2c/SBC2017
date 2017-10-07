@@ -18,7 +18,7 @@ class person(object):
 		self.availableClusters = availableClusters[availableClusters[:,1]].argsort()[::-1] # sorts the clusters in decreasing weight order
 																						   # numpy array of format [[cluster,weight],[cluster,weight]]
 		
-	def updateCategory(self,globalPeopleRatio)
+	def updateCategory(self,globalPeopleRatio):
 		"""updates cluster category for the person if too many people reject it"""
 		acceptRatio = self.accepted/self.total
 		if acceptRatio < globalPeopleRatio:
